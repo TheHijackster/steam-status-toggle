@@ -9,7 +9,18 @@ const notifier = require('node-notifier');
 const archiver = require('archiver');
 
 // Initialize the Stream Deck
-const streamDeck = openStreamDeck();
+let streamDeck;
+try {
+  console.log("Attempting to open Stream Deck...");
+  streamDeck = openStreamDeck();
+  if (streamDeck) {
+    console.log("Stream Deck successfully opened.");
+  } else {
+    console.error("Stream Deck could not be opened. Please check the connection and try again.");
+  }
+} catch (error) {
+  console.error("Failed to open Stream Deck:", error);
+}
 
 // Initialize Steam API Client
 const steamClient = new steamAPI();
@@ -51,10 +62,18 @@ function showOnScreenAlert(message) {
 
 // Listen for button press event
 if (streamDeck) {
-  console.log('Stream Deck is initialized.');
-  console.log('Available methods on streamDeck:', Object.keys(streamDeck));
+  console.log("Stream Deck is initialized.");
+  console.log("Available methods on streamDeck:", Object.keys(streamDeck));
+
+  // Listen for button press event
+  streamDeck.on('down', (keyIndex) => {
+    console.log(`Button ${keyIndex} was pressed.`);
+    if (keyIndex === 0) {
+      toggleSteamStatus();
+    }
+  });
 } else {
-  console.error('Failed to initialize Stream Deck.');
+  console.error("Stream Deck not available, skipping initialization.");
 }
 
 // Allow user to change icons via Stream Deck software settings
