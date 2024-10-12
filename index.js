@@ -50,11 +50,12 @@ function showOnScreenAlert(message) {
 }
 
 // Listen for button press event
-streamDeck.addListener('down', (keyIndex) => {
-  if (keyIndex === 0) {
-    toggleSteamStatus();
-  }
-});
+if (streamDeck) {
+  console.log('Stream Deck is initialized.');
+  console.log('Available methods on streamDeck:', Object.keys(streamDeck));
+} else {
+  console.error('Failed to initialize Stream Deck.');
+}
 
 // Allow user to change icons via Stream Deck software settings
 function setIcons(iconPath1, iconPath2) {
