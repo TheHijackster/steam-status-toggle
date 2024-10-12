@@ -1,0 +1,29 @@
+{
+  "Actions": [
+    {
+      "UUID": "com.yourname.steamstatustoggle",
+      "Name": "Steam Status Toggle",
+      "Tooltip": "Toggle Steam Status",
+      "Icon": "images/online",
+      "States": [
+        {
+          "Image": "images/online",
+          "Title": "Online",
+          "ShowTitle": false
+        },
+        {
+          "Image": "images/invisible",
+          "Title": "Invisible",
+          "ShowTitle": false
+        }
+      ]
+    }
+  ],
+  "SDKVersion": 2,
+  "Version": "1.0",
+  "Author": "Your Name",
+  "Description": "A plugin to toggle Steam status between Online and Invisible.",
+  "Category": "Utility",
+  "Icon": "images/online",
+  "Name": "Steam Status Toggle"
+}
