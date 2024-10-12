@@ -1,0 +1,17 @@
+{
+  "name": "steam-status-toggle",
+  "version": "1.0.0",
+  "description": "A plugin to toggle Steam status between Online and Invisible.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Your Name",
+  "license": "ISC",
+  "dependencies": {
+    "@elgato-stream-deck/node": "*",
+    "archiver": "^7.0.1",
+    "node-notifier": "^10.0.0",
+    "steam-user": "^4.19.17"
+  }
+}

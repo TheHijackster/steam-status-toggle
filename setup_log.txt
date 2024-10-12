@@ -1,0 +1,9 @@
+Running setup script... 
+Installing dependencies... 
+
+up to date, audited 139 packages in 675ms
+
+6 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
